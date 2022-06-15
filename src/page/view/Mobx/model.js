@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useQuery } from "../Hooks/utils";
+import { useQuery } from "@/utils";
 import { makeAutoObservable, observable, computed } from "mobx";
 
 class Model {

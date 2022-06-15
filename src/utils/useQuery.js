@@ -1,12 +1,10 @@
-import { useState } from "react";
 import { message } from "antd";
-
 /**
  *
  * @param {function} request
  * @returns
  */
-async function useQuery(
+export default async function useQuery(
   request = () => {
     return new Promise((resolve) => resolve({}));
   }
@@ -27,19 +25,3 @@ async function useQuery(
       });
   });
 }
-/**
- *
- * @param {object} initialState
- * @returns
- */
-function useAtom(initialState = {}) {
-  const [state, setState] = useState({ ...initialState });
-  const changeState = (v = {}) =>
-    setState((pre) => ({
-      ...pre,
-      ...v,
-    }));
-  return [state, changeState];
-}
-
-export { useAtom, useQuery };

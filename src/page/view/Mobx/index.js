@@ -17,7 +17,6 @@ export default observer(function () {
       });
     });
   }, []);
-  console.log(model);
   return (
     <div>
       formily

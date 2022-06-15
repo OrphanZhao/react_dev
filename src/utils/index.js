@@ -1,5 +1,7 @@
 import useLazy from "./useLazy";
+import useAtom from "./useAtom";
+import useQuery from "./useQuery";
 import useFavicon from "./useFavicon";
 import UseErrorBoundary from "./useErrorBoundary";
 
-export { useLazy, useFavicon, UseErrorBoundary };
+export { useLazy, useAtom, useQuery, useFavicon, UseErrorBoundary };

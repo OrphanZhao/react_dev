@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import axios from "axios";
-import { useAtom, useQuery } from "./utils";
+import { useAtom, useQuery } from "@/utils";
 
 const ModelContext = createContext({});
 
