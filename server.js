@@ -9,7 +9,7 @@ const webpackHotMiddleware = require("webpack-hot-middleware");
 
 const compiler = webpack(config);
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(history());
 app.use(
