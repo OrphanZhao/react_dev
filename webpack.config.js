@@ -31,10 +31,8 @@ let plugins = [
   new HappyPack({
     loaders: ["babel-loader"],
   }),
+  new webpack.HotModuleReplacementPlugin(),
 ];
-if (mode === "development") {
-  plugins.push(new webpack.HotModuleReplacementPlugin());
-}
 /**
  * 生产环境 `样式文件` 抽离
  */
@@ -65,10 +63,13 @@ const config = {
   mode,
   devtool,
   target: "web",
-  entry: [
-    "webpack-hot-middleware/client?reload=true&path=/__webpack_hmr",
-    path.resolve(__dirname, "./src/index.js"),
-  ],
+  entry:
+    mode === "development"
+      ? [
+          "webpack-hot-middleware/client?reload=true&path=/__webpack_hmr",
+          path.resolve(__dirname, "./src/index.js"),
+        ]
+      : path.resolve(__dirname, "./src/index.js"),
   output: {
     path: path.resolve(__dirname, "build"),
     filename: `${dir}/js/[name].[contenthash].js`,
