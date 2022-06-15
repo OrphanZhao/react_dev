@@ -5,5 +5,3 @@ import "./index.less";
 import App from "./page/App";
 
 createRoot(document.getElementById("app")).render(<App />);
-
-const port = 3000;
