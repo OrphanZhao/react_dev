@@ -3,5 +3,12 @@ import { createRoot } from "react-dom/client";
 import "antd/dist/antd.less";
 import "./index.less";
 import App from "./page/App";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
-createRoot(document.getElementById("app")).render(<App />);
+// @ts-ignore
+createRoot(document.getElementById("app")).render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
