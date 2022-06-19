@@ -15,7 +15,8 @@ export default async function useQuery(
         if (res && (res.code === 0 || res.code === 200)) {
           resolve(res);
         } else {
-          res && message.error(res.msg);
+          console.log(res);
+          res && message.error(res.message);
           rejected(res);
         }
       })
